@@ -14,9 +14,7 @@ const App = () => {
         `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo`
       )
       .then((res) => {
-        let data = res.data;
-        setImages(data.hits);
-        console.log(data.hits);
+        setImages(res.data.hits);
         setIsLoading(false);
       })
       .catch((err) => {
@@ -26,7 +24,7 @@ const App = () => {
 
   return (
     <div className=" container mx-auto">
-      <ImageSearch searchText={(text) => setTerm(text)} />
+      <ImageSearch searchText={(text) => setTerm(text)}/>
 
       {!isLoading && images.length === 0 && (
         <h1 className="text-4xl text-center mx-auto mt-2">No Images Found</h1>
@@ -37,11 +35,11 @@ const App = () => {
           <button
             disabled
             type="button"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center"
           >
             <svg
               role="status"
-              class="inline w-4 h-4 mr-3 text-white animate-spin"
+              className="inline w-4 h-4 mr-3 text-white animate-spin"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

@@ -14,7 +14,7 @@ const ImageSearch = ({ searchText }) => {
           <input
             type="text"
             className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 px-2 py-1 leading-tight focus:outline-none"
-            placeholder="Search Image Term..."
+            placeholder="Search here for item"
             onChange={(e) => setText(e.target.value)}
           />
           <button

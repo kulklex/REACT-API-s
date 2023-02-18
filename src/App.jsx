@@ -5,6 +5,7 @@ import ImageSearch from "./components/imageSearch";
 
 const App = () => {
   const [images, setImages] = useState([]);
+  const [text, setText] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [term, setTerm] = useState("cars");
 
@@ -22,9 +23,11 @@ const App = () => {
       });
   }, [term]);
 
+  const searchText = (text) => {setTerm(text)}
+
   return (
     <div className=" container mx-auto">
-      <ImageSearch searchText={(text) => setTerm(text)}/>
+      <ImageSearch text={text} setText={setText} searchText={searchText}/>
 
       {!isLoading && images.length === 0 && (
         <h1 className="text-4xl text-center mx-auto mt-2">No Images Found</h1>
@@ -59,7 +62,7 @@ const App = () => {
       ) : (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-4 md:gap-6 md:mx-12 ">
           {images.map((image) => (
-            <ImageCard key={image?.id} image={image} />
+            <ImageCard key={image?.id} image={image} searchText={searchText} />
           ))}
         </div>
       )}

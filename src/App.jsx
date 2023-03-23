@@ -7,7 +7,7 @@ const App = () => {
   const [images, setImages] = useState([]);
   const [text, setText] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [term, setTerm] = useState("cars");
+  const [term, setTerm] = useState("flowers");
 
   useEffect(() => {
     axios

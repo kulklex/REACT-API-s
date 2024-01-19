@@ -31,9 +31,8 @@ const ImageCard = ({ image, searchText, setText, term, setTerm }) => {
           <button
             key={index}
             onClick={() => {
-              searchText(tag)
               setText(tag)
-              setTerm(tag)
+              searchText(tag)
             }}
             className="inline-block bg-gray-200 rounded-full px-3 py-3 text-sm font-semibold text-gray-700 mr-2"
           >

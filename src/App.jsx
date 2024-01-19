@@ -17,14 +17,14 @@ const App = () => {
       .then((res) => {
         setImages(res.data.hits);
         setIsLoading(false);
-        setTerm("");
+        setTerm(" ");
       })
       .catch((err) => {
         console.error(err);
       });
-  }, [term]);
+  }, [term, text]);
 
-  const searchText = (text) => {setTerm(text)}
+  let searchText = (text) => {setTerm(text)}
 
   return (
     <div className=" container mx-auto">

@@ -17,6 +17,7 @@ const App = () => {
       .then((res) => {
         setImages(res.data.hits);
         setIsLoading(false);
+        setTerm("");
       })
       .catch((err) => {
         console.error(err);

@@ -2,8 +2,7 @@ import React from "react";
 
 const ImageSearch = ({ searchText, text, setText }) => {
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     searchText(text);
   };
 

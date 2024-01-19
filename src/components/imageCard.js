@@ -31,8 +31,11 @@ const ImageCard = ({ image, searchText, setText, term, setTerm }) => {
           <button
             key={index}
             onClick={() => {
+              setTerm(tag)
               setText(tag)
               searchText(tag)
+              console.log("imageCard: "+text)
+              console.log("imageCard: "+term)
             }}
             className="inline-block bg-gray-200 rounded-full px-3 py-3 text-sm font-semibold text-gray-700 mr-2"
           >

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ImageCard = ({ image, searchText, setText }) => {
+const ImageCard = ({ image, searchText, setText, term, setTerm }) => {
   const tags = image?.tags.split(",");
 
   return (
@@ -33,6 +33,7 @@ const ImageCard = ({ image, searchText, setText }) => {
             onClick={() => {
               searchText(tag)
               setText(tag)
+              setTerm(tag)
             }}
             className="inline-block bg-gray-200 rounded-full px-3 py-3 text-sm font-semibold text-gray-700 mr-2"
           >
